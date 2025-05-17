@@ -11,6 +11,7 @@
     <description>Ecommerce BE</description>
 
     <modules>
+        <module>clients</module>
         <module>web-app</module>
     </modules>
 
