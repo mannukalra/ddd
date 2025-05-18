@@ -1,3 +1,9 @@
 quarkus:
   http:
     port: 8888
+
+portal:
+  business-type:
+    internet: Internet
+    coax: Coax
+    mobile: Mobile

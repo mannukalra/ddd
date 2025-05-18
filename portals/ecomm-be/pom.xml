@@ -38,6 +38,11 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-cache</artifactId>
+            <version>${quarkus.platform.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
