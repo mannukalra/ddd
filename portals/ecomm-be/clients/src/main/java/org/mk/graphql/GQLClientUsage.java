@@ -5,7 +5,9 @@ import io.smallrye.graphql.client.Response;
 import io.smallrye.graphql.client.core.Document;
 import io.smallrye.graphql.client.dynamic.api.DynamicGraphQLClient;
 import io.smallrye.graphql.client.dynamic.api.DynamicGraphQLClientBuilder;
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.mk.graphql.model.User;
 
 import java.util.concurrent.ExecutionException;
@@ -19,9 +21,17 @@ import static io.smallrye.graphql.client.core.Operation.operation;
 @ApplicationScoped
 public class GQLClientUsage {
 
-    DynamicGraphQLClient client = DynamicGraphQLClientBuilder.newBuilder()
-            .url("https://graphqlzero.almansi.me/api")
+    @ConfigProperty(name = "gql-url")
+    String gqlUrl;
+
+    DynamicGraphQLClient client;
+
+    @PostConstruct
+    void init(){
+         client = DynamicGraphQLClientBuilder.newBuilder()
+                .url(gqlUrl)
                 .build();
+    }
 
     public User executeGetUser(String id) {
         Document document = document(

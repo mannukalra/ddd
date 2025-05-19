@@ -5,5 +5,10 @@ query UserDetails($id:ID!) {
     email
     phone
     website
+    address {
+      street
+      city
+      zipcode
+    }
   }
 }
