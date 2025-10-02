@@ -1,0 +1,20 @@
+{
+  "marketId": "zxzxzxz",
+  "spec": "cluselese",
+  "offerings": [
+    {
+      "offering": {
+        "id": "1",
+        "name": "devis-blessings"
+      },
+      "businessType": "grace"
+    },
+    {
+      "offering": {
+        "id": "2",
+        "name": "sushruthh-garbha"
+      },
+      "businessType": "grain-good"
+    }
+  ]
+}

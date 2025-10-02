@@ -32,6 +32,11 @@ public class OfferingsServiceImpl implements OfferingsService{
     }
 
     @Override
+    public List<Offering> getJsonOfferings() {
+        return offeringsOperation.getJsonOfferings();
+    }
+
+    @Override
     public void addOfferings(List<Offering> addedOfferings) {
         // default businessType to internet
         addedOfferings.forEach(offering -> {

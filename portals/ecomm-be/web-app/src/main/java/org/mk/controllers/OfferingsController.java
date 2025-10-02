@@ -26,6 +26,13 @@ public class OfferingsController {
     }
 
     @GET
+    @Path("/json-offerings")
+    public Response getJsonOfferings() {
+        List<Offering> offerings = offeringsService.getJsonOfferings();
+        return Response.ok().entity(offerings).build();
+    }
+
+    @GET
     @Path("/{businessType}")
     public Response getOfferings(@PathParam("businessType") String businessType) {
         List<Offering> offerings = offeringsService.getOfferings(businessType);
